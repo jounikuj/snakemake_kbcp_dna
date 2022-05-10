@@ -1,0 +1,9 @@
+channels:
+  - bioconda
+  - conda-forge
+
+dependencies:
+  - bowtie2
+  - gatk4
+  - samtools
+  - tbb=2020.2 # Bug fix, see: https://www.biostars.org/p/494922/ for details.

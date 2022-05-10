@@ -1,0 +1,14 @@
+channels:
+  - anaconda
+  - bioconda
+  - shahcompbio
+  - conda-forge
+
+dependencies:
+  - bcftools
+  - oncokb-annotator
+  - pandas
+  - pyvcf
+  - samtools
+  - snpeff
+  - snpsift

@@ -1,0 +1,37 @@
+# This is a configuration file for Vakka variant caller workflow.
+# You can change the configuration of workflow simply by editing
+# following parameters.
+
+# Sequencing information.
+sequencing:
+  gene_panel: config/Flex_114_targets_15bp.bed
+
+reference:
+  fasta: https://storage.googleapis.com/gcp-public-data--broad-references/hg38/v0/Homo_sapiens_assembly38.fasta
+
+# Parameters for read trimming.
+trimming:
+  adapter_fwd: CTGTCTCTTATACACATCT
+  adapter_rev: TCGTCGGCAGCGTCAGATCGGAAGAGC
+  min_quality: 10
+  min_length: 10
+
+# Perform read deduplication. If sequencing data was obtained from amplicon-based sequencing,
+# you should change the value of this parameter to 'False'.
+deduplication: True
+
+# Parameters for variant calling.
+variant_calling:
+  known_sites: 
+    gnomad: https://storage.googleapis.com/gatk-best-practices/somatic-hg38/af-only-gnomad.hg38.vcf.gz
+    mills: https://storage.googleapis.com/gcp-public-data--broad-references/hg38/v0/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
+    dbsnp: https://storage.googleapis.com/gcp-public-data--broad-references/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf
+
+  panel_of_normals: https://storage.googleapis.com/gatk-best-practices/somatic-hg38/1000g_pon.hg38.vcf.gz
+
+# Annotation.
+annotation:
+  clinvar: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/weekly/clinvar.vcf.gz
+  oncokb:
+    token: a91ffb53-855b-4994-b2f6-f577fb35c4a4
+    cancer: BRCA
